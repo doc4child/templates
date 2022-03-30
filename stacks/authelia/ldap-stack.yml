@@ -1,0 +1,96 @@
+
+# for openldap
+# in this most recent config, used live certificates and that seemed to work.
+# it does generate dhpram.pem file in the /volumes/npm/letsencrypt folder since that is the volume for certs. The certificate path from there onwards is mentioned in the filename environmental variable like-
+#    LDAP_TLS_CRT_FILENAME: /live/npm-XX/cert.pem
+
+# for phpldapadmin, it used the certificate links to the let's encrypt certificates.
+
+# for NPM
+# entry ldap.example.com needed https at forward using "18443" forward with port 80 did not work
+
+# this worked, login with following credentials in the phpLDAPadmin
+# cn=admin,dc=example,dc=com
+# password
+
+# cn=user-ro,dc=example,dc=com
+# Passowrd ro_pass
+
+# ref used was https://github.com/osixia/docker-openldap/issues/120
+# and https://github.com/Ramhm/openldap/blob/master/docker-compose.yml 
+
+# replace example password npm-XX default-network
+
+version: '2'
+services:
+  openldap:
+    image: osixia/openldap:1.1.8
+    container_name: ldap_openldap
+    volumes:
+      #- /volumes/npm/letsencrypt/archive/npm-XX:/container/service/slapd/assets/certs/
+      - /volumes/npm/letsencrypt:/container/service/slapd/assets/certs
+      - /volumes/ldap/ldapData:/var/lib/ldap
+      - /volumes/ldap/ldapConf:/etc/ldap/slapd.d
+
+    environment:
+      PUID: 1000
+      PGID: 1000
+      LDAP_LOG_LEVEL: "256"
+      LDAP_ORGANISATION: "example"
+      LDAP_DOMAIN: "example.com"
+      LDAP_BASE_DN: dc=example,dc=com
+      LDAP_ADMIN_USERNAME: admin
+      LDAP_ADMIN_PASSWORD: password
+      LDAP_CONFIG_PASSWORD: password
+      LDAP_READONLY_USER: "true"
+      LDAP_READONLY_USER_USERNAME: user-ro
+      LDAP_READONLY_USER_PASSWORD: ro_pass
+      LDAP_BACKEND: "hdb"
+      LDAP_TLS: "true"
+      #LDAP_TLS_CRT_FILENAME: cert1.pem
+      #LDAP_TLS_KEY_FILENAME: privkey1.pem
+      #LDAP_TLS_CA_CRT_FILENAME: fullchain1.pem
+      LDAP_TLS_CRT_FILENAME: /live/npm-XX/cert.pem
+      LDAP_TLS_KEY_FILENAME: /live/npm-XX/privkey.pem
+      LDAP_TLS_CA_CRT_FILENAME: /live/npm-XX/fullchain.pem
+      LDAP_TLS_VERIFY_CLIENT: "try"
+      LDAP_TLS_ENFORCE: "false"
+      LDAP_REPLICATION: "false"
+      LDAP_REMOVE_CONFIG_AFTER_SETUP: "true"
+      LDAP_SSL_HELPER_PREFIX: "ldap"
+
+    stdin_open: true
+    ports:
+      - "636:636"
+    hostname: "ldap_openldap"
+    networks:
+      - default-network
+  phpldapadmin:
+    image: osixia/phpldapadmin:latest
+    container_name: ldap_phpldapadmin
+    volumes:
+      - /volumes/npm/letsencrypt:/container/service/phpldapadmin/assets/apache2/certs
+      - /volumes/ldap/phpldapadmin:/var/www/phpldapadmin
+    environment:
+      PHPLDAPADMIN_LDAP_HOSTS: "openldap"
+      PHPLDAPADMIN_HTTPS: "true"
+      PHPLDAPADMIN_HTTPS_CRT_FILENAME: "/live/npm-XX/cert.pem" #not sure why but openldap does not like quotes and phpldapadmin likes the string in quote as here
+      PHPLDAPADMIN_HTTPS_KEY_FILENAME: "/live/npm-XX/privkey.pem"
+      PHPLDAPADMIN_HTTPS_CA_CRT_FILENAME: "/live/npm-XX/fullchain.pem"
+      PHPLDAPADMIN_LDAP_CLIENT_TLS: "false"
+    ports:
+      - "18443:443"
+
+    depends_on:
+      - openldap
+    hostname: "ldap_phpldapadmin"
+    networks:
+      - default-network
+volumes:
+    ldapData:
+    ldapConf:
+networks:
+  default-network:
+      external:
+        name: default-network
+

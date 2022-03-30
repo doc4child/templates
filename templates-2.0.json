@@ -1,6 +1,33 @@
 {
   "version": "2",
   "templates": [
+	{
+		"type": 3,
+		"title": "Monitoring",
+		"description": "Monitoring tools stack",
+		"note": "Create directories and set config file based on instructions <a href='https://github.com/doc4child/portainer-templates/blob/main/stacks/monitoring/ReadMe.md' target='_blank'>here</a>",
+		"categories": [
+			"Monitoring"
+		],
+		"platform": "linux",
+		"logo": "https://cdn-icons-png.flaticon.com/512/2329/2329083.png",
+		"repository": {
+			"url": "https://github.com/doc4child/portainer-templates",
+			"stackfile": "stacks/monitoring/monitoring-stack.yml"
+		},
+		"env": [
+			{
+				"name": "PUID",
+				"default": "1000",
+				"label": "PUID"
+			},
+			{
+				"name": "PGID",
+				"default": "1000",
+				"label": "PGID"
+			}
+		]
+	},
     {
 			"type": 1,
 			"title": "Adguardhome-sync",

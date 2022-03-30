@@ -1,0 +1,65 @@
+version: "3.9"
+services:
+  auth:
+    container_name: auth    
+    image: authelia/authelia:latest
+    expose:
+      - 9091
+    volumes:
+      - /volumes/authentication/authelia:/config
+    networks:
+      - docker-network
+    restart: unless-stopped
+    depends_on:
+      - auth_redis
+      - auth_mariadb
+
+  auth_redis:
+    container_name: auth_redis
+    image: bitnami/redis:latest
+    expose:
+      - 6379
+    volumes:
+      - /volumes/authentication/redis:/bitnami/
+    environment:
+      REDIS_PASSWORD_FILE: /run/secrets/auth_redis_password
+    networks:
+      - docker-network
+    restart: unless-stopped
+
+  auth_mariadb:
+    container_name: auth_mariadb
+    image: linuxserver/mariadb:latest
+    expose:
+      - 3306
+    volumes:
+      - /volumes/authentication/mariadb:/config
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/auth_mysqldb_root_password
+      MYSQL_ROOT_USER: root
+      MYSQL_DATABASE: authelia
+      MYSQL_USER: authelia
+      MYSQL_PASSWORD_FILE: /run/secrets/auth_mysqldb_password 
+    secrets:
+       - auth_mysqldb_root_password
+       - auth_mysqldb_password
+    networks:
+      - docker-network
+    restart: unless-stopped
+secrets:
+   auth_mysqldb_password:
+     file: /secrets/authentication/auth_mysqldb_password.txt
+   auth_mysqldb_root_password:
+     file: /secrets/authentication/auth_mysqldb_root_password.txt
+   auth_redis_password:
+     file: /secrets/authentication/auth_redis_password.txt
+
+networks:
+  docker-network:
+    driver: bridge
+    external: true
+
+volumes:
+    authelia:
+    redis:
+    mariadb:
