@@ -37,7 +37,10 @@ services:
     image: gcr.io/cadvisor/cadvisor:latest
     container_name: cadvisor
     ports:
-      - "8084:8080"
+    - target: 8080
+      published: ${CADVISOR_PORT}
+      protocol: tcp
+      mode: host
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
