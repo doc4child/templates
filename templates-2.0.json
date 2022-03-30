@@ -5,7 +5,7 @@
 		"type": 3,
 		"title": "Monitoring",
 		"description": "Monitoring tools stack",
-		"note": "Create directories and set config file based on instructions at <a href='https://github.com/doc4child/portainer-templates/blob/main/stacks/monitoring/ReadMe.md' target='_blank'>here</a>",
+		"note": "Create directories and set config file based on instructions at <a href='https://github.com/doc4child/templates/blob/master/stacks/monitoring/ReadMe.md' target='_blank'>here</a>",
 		"categories": [
 			"Monitoring"
 		],

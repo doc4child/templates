@@ -6,5 +6,5 @@
     mkdir -p /volumes/monitoring/grafana-data        
     cd /volumes/monitoring/prometheus/config
     wget https://raw.githubusercontent.com/doc4child/portainer-templates/main/stacks/monitoring/prometheus.yml
-
+    chown -r 1000 /volumes/monitoring
 ```
