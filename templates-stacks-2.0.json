@@ -64,7 +64,14 @@
 			"repository": {
 				"url": "https://github.com/doc4child/templates",
 				"stackfile": "stacks/watchtower/watchtower-stack.yml"
-			}
+			},
+			"env": [
+				{
+					"name": "WATCHTOWER_SCHEDULE",
+					"default": "0 0 4 * * *",
+					"label": "Watchtower Schedule"
+				}
+			]
 		},
 		{
 			"type": 3,
