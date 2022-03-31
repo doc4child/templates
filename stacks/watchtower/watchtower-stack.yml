@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  watchtower:
+    image: containrrr/watchtower
+    restart: always
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/timezone:/etc/timezone:ro
+    environment:
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_LABEL_ENABLE=true
+      - WATCHTOWER_INCLUDE_RESTARTING=true
+      - WATCHTOWER_SCHEDULE=0 0 4 * * *
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
