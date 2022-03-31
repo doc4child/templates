@@ -57,6 +57,17 @@
 		},
 		{
 			"type": 3,
+			"title": "Watchtower",
+			"description": "Watchtower",
+			"platform": "linux",
+			"logo": "https://containrrr.dev/watchtower/images/logo-450px.png",
+			"repository": {
+				"url": "https://github.com/doc4child/templates",
+				"stackfile": "stacks/watchtower/watchtower-stack.yml"
+			}
+		},
+		{
+			"type": 3,
 			"title": "OpenAMT",
 			"description": "OpenAMT Cloud Toolkit",
 			"note": "MPS password needs to be 8-32 characters including one uppercase, one lowercase letters, one base-10 digit and one special character.",
