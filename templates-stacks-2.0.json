@@ -1,0 +1,105 @@
+{
+	"version": "2",
+	"templates": [
+		{
+			"type": 3,
+			"title": "WordPress",
+			"description": "WordPress setup with a MySQL database",
+			"note": "Deploys a WordPress instance connected to a MySQL database.",
+			"categories": [
+				"CMS"
+			],
+			"platform": "linux",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
+			"repository": {
+				"url": "https://github.com/portainer/templates",
+				"stackfile": "stacks/wordpress/docker-stack.yml"
+			},
+			"env": [
+				{
+					"name": "MYSQL_DATABASE_PASSWORD",
+					"label": "Database root password",
+					"description": "Password used by the MySQL root user set a strong one."
+				}
+			]
+		},
+		{
+			"type": 3,
+			"title": "OpenAMT",
+			"description": "OpenAMT Cloud Toolkit",
+			"note": "MPS password needs to be 8-32 characters including one uppercase, one lowercase letters, one base-10 digit and one special character.",
+			"categories": [
+				"Cloud"
+			],
+			"platform": "linux",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/intel.png",
+			"repository": {
+				"url": "https://github.com/doc4child/portainer-templates",
+				"stackfile": "stacks/openamt/openamt-stack.yml"
+			}, 
+			"env": [
+				{
+					"name": "POSTGRES_USER",
+					"default": "postgres",
+					"label": "Database user"
+				},
+				{
+					"name": "POSTGRES_PASSWORD",
+					"default": "postgres",
+					"label": "Database password"
+				},
+				{
+					"name": "MPS_USER",
+					"default": "<MPS_user>",
+					"label": "MPS user"
+				},
+				{
+					"name": "MPS_PASSWORD",
+					"label": "MPS password"
+				},
+				{
+					"name": "MPS_COMMON_NAME",
+					"label": "MPS URL",
+					"description": "Used to connect to the MPS API."
+				},
+				{
+					"name": "MPS_SECRET",
+					"label": "MPS Secret",
+					"description": "Strong secret key used to log into MPS."
+				},
+				{
+					"name": "VAULT_SECRET",
+					"label": "Vault secret",
+					"description": "Secret token used to log into Vault (don't include '.' character)."
+				}
+			]
+		},
+		{
+			"type": 3,
+			"title": "Monitoring",
+			"description": "Monitoring tools stack",
+			"note": "Create directories and set config file based on instructions <a href='https://github.com/doc4child/portainer-templates/blob/main/stacks/monitoring/ReadMe.md' target='_blank'>here</a>",
+			"categories": [
+				"Monitoring"
+			],
+			"platform": "linux",
+			"logo": "https://cdn-icons-png.flaticon.com/512/2329/2329083.png",
+			"repository": {
+				"url": "https://github.com/doc4child/portainer-templates",
+				"stackfile": "stacks/monitoring/monitoring-stack.yml"
+			},
+			"env": [
+				{
+					"name": "PUID",
+					"default": "1000",
+					"label": "PUID"
+				},
+				{
+					"name": "PGID",
+					"default": "1000",
+					"label": "PGID"
+				}
+			]
+		}
+	]
+}

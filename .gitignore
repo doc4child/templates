@@ -1,1 +1,8 @@
 .idea
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+gitconfig.sh
+gitinit-repo.sh
+gp.sh
