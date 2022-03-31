@@ -13,13 +13,45 @@
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
 			"repository": {
 				"url": "https://github.com/portainer/templates",
-				"stackfile": "stacks/wordpress/docker-stack.yml"
+				"stackfile": "stacks/wordpress/docker-compose.yml"
 			},
 			"env": [
 				{
 					"name": "MYSQL_DATABASE_PASSWORD",
 					"label": "Database root password",
-					"description": "Password used by the MySQL root user set a strong one."
+					"description": "Password used by the MySQL root user."
+				}
+			]
+		},
+		{
+			"type": 3,
+			"title": "Monitoring",
+			"description": "Monitoring tools stack",
+			"note": "Create directories and set config file based on instructions at <a href='https://github.com/doc4child/templates/blob/master/stacks/monitoring/ReadMe.md' target='_blank'>here</a>",
+			"categories": [
+				"Monitoring"
+			],
+			"platform": "linux",
+			"logo": "https://cdn-icons-png.flaticon.com/512/2329/2329083.png",
+			"repository": {
+				"url": "https://github.com/doc4child/templates",
+				"stackfile": "stacks/monitoring/monitoring-stack.yml"
+			},
+			"env": [
+				{
+					"name": "PUID",
+					"default": "1000",
+					"label": "PUID"
+				},
+				{
+					"name": "PGID",
+					"default": "1000",
+					"label": "PGID"
+				},
+				{
+					"name": "CADVISOR_PORT",
+					"default": "8084",
+					"label": "cAdvisor Port"
 				}
 			]
 		},
@@ -34,23 +66,20 @@
 			"platform": "linux",
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/intel.png",
 			"repository": {
-				"url": "https://github.com/doc4child/portainer-templates",
-				"stackfile": "stacks/openamt/openamt-stack.yml"
-			}, 
+				"url": "https://github.com/portainer/templates",
+				"stackfile": "stacks/openamt/docker-compose.yml"
+			},
 			"env": [
 				{
 					"name": "POSTGRES_USER",
-					"default": "postgres",
 					"label": "Database user"
 				},
 				{
 					"name": "POSTGRES_PASSWORD",
-					"default": "postgres",
 					"label": "Database password"
 				},
 				{
 					"name": "MPS_USER",
-					"default": "<MPS_user>",
 					"label": "MPS user"
 				},
 				{
@@ -76,28 +105,22 @@
 		},
 		{
 			"type": 3,
-			"title": "Monitoring",
-			"description": "Monitoring tools stack",
-			"note": "Create directories and set config file based on instructions <a href='https://github.com/doc4child/portainer-templates/blob/main/stacks/monitoring/ReadMe.md' target='_blank'>here</a>",
-			"categories": [
-				"Monitoring"
-			],
+			"title": "FDO",
+			"description": "FDO",
 			"platform": "linux",
-			"logo": "https://cdn-icons-png.flaticon.com/512/2329/2329083.png",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/intel.png",
 			"repository": {
-				"url": "https://github.com/doc4child/portainer-templates",
-				"stackfile": "stacks/monitoring/monitoring-stack.yml"
+				"url": "https://github.com/portainer/templates",
+				"stackfile": "stacks/fdo/docker-stack.yml"
 			},
 			"env": [
 				{
-					"name": "PUID",
-					"default": "1000",
-					"label": "PUID"
+					"name": "owner_api_user",
+					"label": "API Username"
 				},
 				{
-					"name": "PGID",
-					"default": "1000",
-					"label": "PGID"
+					"name": "owner_api_password",
+					"label": "API Password"
 				}
 			]
 		}

@@ -50,6 +50,7 @@
 				},
 				{
 					"name": "CADVISOR_PORT",
+					"default": "8084",
 					"label": "cAdvisor Port"
 				}
 			]
