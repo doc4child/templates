@@ -25,6 +25,114 @@
 		},
 		{
 			"type": 3,
+			"title": "OpenLDAP",
+			"description": "Open LDAP with LDAP Admin",
+			"note": "Create directories and set config file based on instructions at <p><h1><a href='https://github.com/doc4child/templates/blob/master/stacks/monitoring/ReadMe.md' target='_blank'>here</a></h1></p>",
+			"categories": [
+				"Authentication"
+			],
+			"platform": "linux",
+			"logo": "https://upload.wikimedia.org/wikipedia/en/c/c7/OpenLDAP-logo.png",
+			"repository": {
+				"url": "https://github.com/doc4child/templates",
+				"stackfile": "stacks/authelia/ldap-stack.yml"
+			},
+			"env": [
+				{
+					"name": "PUID",
+					"default": "1000",
+					"label": "PUID"
+				},
+				{
+					"name": "PGID",
+					"default": "1000",
+					"label": "PGID"
+				},
+				{
+					"name": "SUBDOMAIN",
+					"default": "ldap",
+					"label": "Subdomain"
+				},
+				{
+					"name": "DOMAIN",
+					"default": "homelabhomie",
+					"label": "Domain Name without TLD"
+				},
+				{
+					"name": "TLD",
+					"default": "com",
+					"label": "Top Level Domain"
+				},
+				{
+					"name": "ADMIN",
+					"default": "admin",
+					"label": "ldap admin username"
+				},
+				{
+					"name": "ADMIN_PASSWORD",
+					"default": "changeme",
+					"label": "ldap admin password"
+				},
+				{
+					"name": "CONFIG_PASSWORD",
+					"default": "changeme",
+					"label": "ldap config password"
+				},
+				{
+					"name": "npm-XX",
+					"label": "npm directory where let's encrypt live certificate links are present, replace XX with number"
+				},	
+				{
+					"name": "OPENLDAP_PORT",
+					"default": "636",
+					"label": "openLDAP Port"
+				},
+				{
+					"name": "LDAPADMIN_PORT",
+					"default": "18443",
+					"label": "LDAP Admin Port"
+				},
+				{
+					"name": "docker-network",
+					"default": "docker-network",
+					"label": "Docker Network where this stack will be connected to"
+				}
+			]
+		},
+		{
+			"type": 3,
+			"title": "Monitoring",
+			"description": "Monitoring tools stack",
+			"note": "Create directories and set config file based on instructions at <a href='https://github.com/doc4child/templates/blob/master/stacks/monitoring/ReadMe.md' target='_blank'>here</a>",
+			"categories": [
+				"Monitoring"
+			],
+			"platform": "linux",
+			"logo": "https://cdn-icons-png.flaticon.com/512/2329/2329083.png",
+			"repository": {
+				"url": "https://github.com/doc4child/templates",
+				"stackfile": "stacks/monitoring/monitoring-stack.yml"
+			},
+			"env": [
+				{
+					"name": "PUID",
+					"default": "1000",
+					"label": "PUID"
+				},
+				{
+					"name": "PGID",
+					"default": "1000",
+					"label": "PGID"
+				},
+				{
+					"name": "CADVISOR_PORT",
+					"default": "8084",
+					"label": "cAdvisor Port"
+				}
+			]
+		},
+		{
+			"type": 3,
 			"title": "Monitoring",
 			"description": "Monitoring tools stack",
 			"note": "Create directories and set config file based on instructions at <a href='https://github.com/doc4child/templates/blob/master/stacks/monitoring/ReadMe.md' target='_blank'>here</a>",
