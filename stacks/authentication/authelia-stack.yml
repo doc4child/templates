@@ -22,7 +22,7 @@ services:
     volumes:
       - /volumes/authentication/redis:/bitnami/
     environment:
-      REDIS_PASSWORD_FILE: /run/secrets/auth_resdis_password
+      REDIS_PASSWORD_FILE: /run/secrets/auth_redis_password
     networks:
       - docker-network
     restart: unless-stopped
@@ -51,7 +51,7 @@ secrets:
     file: /secrets/authentication/auth_mysqldb_password.txt
   auth_mysqldb_root_password:
     file: /secrets/authentication/auth_mysqldb_root_password.txt
-  auth_resdis_password:
+  auth_redis_password:
     file: /secrets/authentication/auth_redis_password.txt
 
 networks:
