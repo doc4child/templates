@@ -15,4 +15,4 @@ users:
       - admins
       - dev
 ...
-# yamllint enable rule:line-length
+# yamllint enable rule:line-length test
