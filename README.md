@@ -5,6 +5,37 @@ This repository hosts combination of templates from official repository as well 
 For more information about the template definition format and how to deploy your own templates, see the [relevant documentation section](https://documentation.portainer.io/v2.0/templates/deploy_stack/).
 
 
+# This repositories tries to use following
+
+## setup
+
+docker containers behind nginx-reverse-proxy
+
+## Network 
+
+docker-network
+
+## PUID and PGID:
+
+1000
+
+## Password
+
+changeme
+
+## Organization
+* Stacks in stacks folder
+* each stack inside overall directory
+* config files in this directory.
+* .sh script to install the configurations
+
+## Volumes 
+
+They are located at 
+
+/volumes/stack_name/container_name/ +/-config folder
+
+
 # Portainer App Templates for LinuxServer.io Docker containers
 
 These [Portainer App Templates](https://documentation.portainer.io/v2.0/settings/apps/) can be used to easily deploy [LinuxServer.io Docker containers](https://hub.docker.com/u/linuxserver/) with predefined settings.

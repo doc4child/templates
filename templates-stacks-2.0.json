@@ -91,12 +91,8 @@
 					"name": "LDAPADMIN_PORT",
 					"default": "18443",
 					"label": "LDAP Admin Port"
-				},
-				{
-					"name": "docker-network",
-					"default": "docker-network",
-					"label": "Docker Network where this stack will be connected to"
 				}
+
 			]
 		},
 		{

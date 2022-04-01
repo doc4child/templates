@@ -19,7 +19,7 @@
 # ref used was https://github.com/osixia/docker-openldap/issues/120
 # and https://github.com/Ramhm/openldap/blob/master/docker-compose.yml 
 
-# replace ${DOMAIN} ${CHANGEME} ${npm-XX} ${docker-network}
+# replace ${DOMAIN} ${CHANGEME} ${npm-XX} docker-network
 
 version: '2'
 services:
@@ -64,7 +64,7 @@ services:
       - "${OPENLDAP_PORT}:636"
     hostname: "ldap_openldap"
     networks:
-      - ${docker-network}
+      - docker-network
   phpldapadmin:
     image: osixia/phpldapadmin:latest
     container_name: ldap_phpldapadmin
@@ -85,12 +85,12 @@ services:
       - openldap
     hostname: "ldap_phpldapadmin"
     networks:
-      - ${docker-network}
+      - docker-network
 volumes:
     ldapData:
     ldapConf:
 networks:
-  ${docker-network}:
+  docker-network:
       external:
-        name: ${docker-network}
+        name: docker-network
 
