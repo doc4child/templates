@@ -108,24 +108,7 @@
 			"repository": {
 				"url": "https://github.com/doc4child/templates",
 				"stackfile": "stacks/authentication/authelia-stack.yml"
-			}//,
-			// "env": [
-			// 	{
-			// 		"name": "auth_mysqldb_password",
-			// 		"default": "auth_mysqldb_password",
-			// 		"label": "auth_mysqldb_password"
-			// 	},
-			// 	{
-			// 		"name": "auth_mysqldb_root_password",
-			// 		"default": "auth_mysqldb_root_password",
-			// 		"label": "auth_mysqldb_root_password"
-			// 	},
-			// 	{
-			// 		"name": "auth_mysqldb_password",
-			// 		"default": "auth_mysqldb_password",
-			// 		"label": "auth_mysqldb_password"
-			// 	}
-			// ]
+			}
 		},
 		{
 			"type": 3,
