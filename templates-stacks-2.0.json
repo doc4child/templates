@@ -27,7 +27,7 @@
 			"type": 3,
 			"title": "OpenLDAP",
 			"description": "Open LDAP with LDAP Admin",
-			"note": "Create directories and set config file - instructions at <p><h1><a href='https://github.com/doc4child/templates/blob/master/stacks/monitoring/ReadMe.md' target='_blank'>ReadMe</a></h1></p>",
+			"note": "Create directories and set config file - instructions at <p><h1><a href='https://github.com/doc4child/templates/blob/master/stacks/authentication/ReadMe.md' target='_blank'>ReadMe</a></h1></p>",
 			"categories": [
 				"Authentication"
 			],
@@ -97,33 +97,33 @@
 		},
 		{
 			"type": 3,
-			"title": "Monitoring",
-			"description": "Monitoring tools stack",
-			"note": "Create directories and set config file based on instructions at <a href='https://github.com/doc4child/templates/blob/master/stacks/monitoring/ReadMe.md' target='_blank'>here</a>",
+			"title": "Authelia",
+			"description": "Authorization tools stack",
+			"note": "Create directories and set config file based on instructions at <a href='https://github.com/doc4child/templates/blob/master/stacks/Authentication/ReadMe.md' target='_blank'>here</a>",
 			"categories": [
-				"Monitoring"
+				"Authentication"
 			],
 			"platform": "linux",
-			"logo": "https://cdn-icons-png.flaticon.com/512/2329/2329083.png",
+			"logo": "https://cdn-icons.flaticon.com/png/512/1329/premium/1329352.png?token=exp=1648812114~hmac=efbc1e62d808ffa1eb765bfc26f6473e",
 			"repository": {
 				"url": "https://github.com/doc4child/templates",
-				"stackfile": "stacks/monitoring/monitoring-stack.yml"
+				"stackfile": "stacks/authentication/authelia-stack.yml"
 			},
 			"env": [
 				{
-					"name": "PUID",
-					"default": "1000",
-					"label": "PUID"
+					"name": "auth_mysqldb_password",
+					"default": "auth_mysqldb_password",
+					"label": "auth_mysqldb_password"
 				},
 				{
-					"name": "PGID",
-					"default": "1000",
-					"label": "PGID"
+					"name": "auth_mysqldb_root_password",
+					"default": "auth_mysqldb_root_password",
+					"label": "auth_mysqldb_root_password"
 				},
 				{
-					"name": "CADVISOR_PORT",
-					"default": "8084",
-					"label": "cAdvisor Port"
+					"name": "auth_mysqldb_password",
+					"default": "auth_mysqldb_password",
+					"label": "auth_mysqldb_password"
 				}
 			]
 		},

@@ -22,7 +22,7 @@ services:
     volumes:
       - /volumes/authentication/redis:/bitnami/
     environment:
-      REDIS_PASSWORD_FILE: /run/secrets/auth_redis_password
+      REDIS_PASSWORD_FILE: /run/secrets/${auth_resdis_password}
     networks:
       - docker-network
     restart: unless-stopped
@@ -35,24 +35,24 @@ services:
     volumes:
       - /volumes/authentication/mariadb:/config
     environment:
-      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/auth_mysqldb_root_password
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/${auth_mysqldb_root_password}
       MYSQL_ROOT_USER: root
       MYSQL_DATABASE: authelia
       MYSQL_USER: authelia
-      MYSQL_PASSWORD_FILE: /run/secrets/auth_mysqldb_password 
+      MYSQL_PASSWORD_FILE: /run/secrets/${auth_mysqldb_password} 
     secrets:
-       - auth_mysqldb_root_password
-       - auth_mysqldb_password
+       - ${auth_mysqldb_root_password}
+       - ${auth_mysqldb_password}
     networks:
       - docker-network
     restart: unless-stopped
 secrets:
-   auth_mysqldb_password:
-     file: /secrets/authentication/auth_mysqldb_password.txt
-   auth_mysqldb_root_password:
-     file: /secrets/authentication/auth_mysqldb_root_password.txt
-   auth_redis_password:
-     file: /secrets/authentication/auth_redis_password.txt
+   ${auth_mysqldb_password}:
+     file: /secrets/authentication/${auth_mysqldb_password}.txt
+   ${auth_mysqldb_root_password}:
+     file: /secrets/authentication/${auth_mysqldb_root_password}.txt
+   ${auth_resdis_password}:
+     file: /secrets/authentication/${auth_resdis_password}.txt
 
 networks:
   docker-network:
