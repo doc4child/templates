@@ -79,7 +79,7 @@
 					"label": "ldap config password"
 				},
 				{
-					"name": "npm-XX",
+					"name": "npm_XX",
 					"label": "npm directory where let's encrypt live certificate links are present, replace XX with number in npm-XX"
 				},	
 				{

@@ -2,7 +2,7 @@
 # for openldap
 # in this most recent config, used live certificates and that seemed to work.
 # it does generate dhpram.pem file in the /volumes/npm/letsencrypt folder since that is the volume for certs. The certificate path from there onwards is mentioned in the filename environmental variable like-
-#    LDAP_TLS_CRT_FILENAME: /live/${npm-XX}/cert.pem
+#    LDAP_TLS_CRT_FILENAME: /live/${npm_XX}/cert.pem
 
 # for phpldapadmin, it used the certificate links to the let's encrypt certificates.
 
@@ -19,7 +19,7 @@
 # ref used was https://github.com/osixia/docker-openldap/issues/120
 # and https://github.com/Ramhm/openldap/blob/master/docker-compose.yml 
 
-# replace ${DOMAIN} ${CHANGEME} ${npm-XX} docker-network
+# replace ${DOMAIN} ${CHANGEME} ${npm_XX} docker-network
 
 version: '2'
 services:
@@ -27,7 +27,7 @@ services:
     image: osixia/openldap:1.1.8
     container_name: ldap_openldap
     volumes:
-      #- /volumes/npm/letsencrypt/archive/${npm-XX}:/container/service/slapd/assets/certs/
+      #- /volumes/npm/letsencrypt/archive/${npm_XX}:/container/service/slapd/assets/certs/
       - /volumes/npm/letsencrypt:/container/service/slapd/assets/certs
       - /volumes/ldap/ldapData:/var/lib/ldap
       - /volumes/ldap/ldapConf:/etc/ldap/slapd.d
@@ -50,9 +50,9 @@ services:
       #LDAP_TLS_CRT_FILENAME: cert1.pem
       #LDAP_TLS_KEY_FILENAME: privkey1.pem
       #LDAP_TLS_CA_CRT_FILENAME: fullchain1.pem
-      LDAP_TLS_CRT_FILENAME: /live/${npm-XX}/cert.pem
-      LDAP_TLS_KEY_FILENAME: /live/${npm-XX}/privkey.pem
-      LDAP_TLS_CA_CRT_FILENAME: /live/${npm-XX}/fullchain.pem
+      LDAP_TLS_CRT_FILENAME: /live/${npm_XX}/cert.pem
+      LDAP_TLS_KEY_FILENAME: /live/${npm_XX}/privkey.pem
+      LDAP_TLS_CA_CRT_FILENAME: /live/${npm_XX}/fullchain.pem
       LDAP_TLS_VERIFY_CLIENT: "try"
       LDAP_TLS_ENFORCE: "false"
       LDAP_REPLICATION: "false"
@@ -74,9 +74,9 @@ services:
     environment:
       PHPLDAPADMIN_LDAP_HOSTS: "openldap"
       PHPLDAPADMIN_HTTPS: "true"
-      PHPLDAPADMIN_HTTPS_CRT_FILENAME: "/live/${npm-XX}/cert.pem" #not sure why but openldap does not like quotes and phpldapadmin likes the string in quote as here
-      PHPLDAPADMIN_HTTPS_KEY_FILENAME: "/live/${npm-XX}/privkey.pem"
-      PHPLDAPADMIN_HTTPS_CA_CRT_FILENAME: "/live/${npm-XX}/fullchain.pem"
+      PHPLDAPADMIN_HTTPS_CRT_FILENAME: "/live/${npm_XX}/cert.pem" #not sure why but openldap does not like quotes and phpldapadmin likes the string in quote as here
+      PHPLDAPADMIN_HTTPS_KEY_FILENAME: "/live/${npm_XX}/privkey.pem"
+      PHPLDAPADMIN_HTTPS_CA_CRT_FILENAME: "/live/${npm_XX}/fullchain.pem"
       PHPLDAPADMIN_LDAP_CLIENT_TLS: "false"
     ports:
       - "${LDAPADMIN_PORT}:443" #18443
