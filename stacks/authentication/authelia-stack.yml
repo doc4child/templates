@@ -23,6 +23,8 @@ services:
       - /volumes/authentication/redis:/bitnami/
     environment:
       REDIS_PASSWORD_FILE: /run/secrets/auth_redis_password
+    secrets:
+      - auth_redis_password
     networks:
       - docker-network
     restart: unless-stopped
