@@ -27,7 +27,7 @@
 			"type": 3,
 			"title": "OpenLDAP",
 			"description": "Open LDAP with LDAP Admin",
-			"note": "Create directories and set config file based on instructions at <p><h1><a href='https://github.com/doc4child/templates/blob/master/stacks/monitoring/ReadMe.md' target='_blank'>here</a></h1></p>",
+			"note": "Create directories and set config file - instructions at <p><h1><a href='https://github.com/doc4child/templates/blob/master/stacks/monitoring/ReadMe.md' target='_blank'>ReadMe</a></h1></p>",
 			"categories": [
 				"Authentication"
 			],
