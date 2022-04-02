@@ -421,7 +421,7 @@
 				"name": "PORT"
 			  }
 			],
-			"logo": "https://raw.githubusercontent.com/doc4child/images/bookstack2.png",
+			"logo": "https://github.com/doc4child/templates/blob/master/images/bookstack2.png?raw=true",
 			"note": "Default login is admin@admin.com with a password of password. The database created is called bookstackapp and the database user is called bookstack",
 			"platform": "linux",
 			"repository": {
@@ -468,7 +468,7 @@
 				"name": "PORT"
 			  }
 			],
-			"logo": "https://raw.githubusercontent.com/doc4child/images/nextcloud-icon.png",
+			"logo": "https://github.com/doc4child/templates/blob/master/images/nextcloud-icon.png?raw=true",
 			"name": "nextcloud",
 			"note": "The database user is nextcloud and the database is nextcloud_db. The host of the database will be located at the bottom of the DB conotainer in portainer.",
 			"platform": "linux",
@@ -559,7 +559,7 @@
 				"name": "PORT"
 			  }
 			],
-			"logo": "https://raw.githubusercontent.com/doc4child/images/petio-icon.png",
+			"logo": "https://github.com/doc4child/templates/blob/master/images/petio-icon.png?raw=true",
 			"name": "Petio",
 			"platform": "linux",
 			"repository": {
