@@ -268,7 +268,7 @@
 			"platform": "linux",
 			"repository": {
 			  "stackfile": "stacks/vikunja/vikunja.yml",
-			  "url": "https://github.com//doc4child/templates"
+			  "url": "https://github.com/doc4child/templates"
 			},
 			"title": "Vikunja",
 			"type": 3
@@ -290,7 +290,7 @@
 			"platform": "linux",
 			"repository": {
 			  "stackfile": "stacks/stash/stash.yml",
-			  "url": "https://github.com//doc4child/templates"
+			  "url": "https://github.com/doc4child/templates"
 			},
 			"title": "Stash",
 			"type": 3
@@ -305,7 +305,7 @@
 			"platform": "linux",
 			"repository": {
 			  "stackfile": "stacks/rocketchat/rocketchat.yml",
-			  "url": "https://github.com//doc4child/templates"
+			  "url": "https://github.com/doc4child/templates"
 			},
 			"title": "Rocket Chat",
 			"type": 3
@@ -332,7 +332,7 @@
 			"platform": "linux",
 			"repository": {
 			  "stackfile": "stacks/joplin/joplin.yml",
-			  "url": "https://github.com//doc4child/templates"
+			  "url": "https://github.com/doc4child/templates"
 			},
 			"title": "Joplin",
 			"type": 3
@@ -349,7 +349,7 @@
 			"platform": "linux",
 			"repository": {
 			  "stackfile": "stacks/dashy/dashy.yml",
-			  "url": "https://github.com//doc4child/templates"
+			  "url": "https://github.com/doc4child/templates"
 			},
 			"title": "Dashy",
 			"type": 3
@@ -421,12 +421,12 @@
 				"name": "PORT"
 			  }
 			],
-			"logo": "https://raw.githubusercontent.com//doc4child/images/bookstack2.png",
+			"logo": "https://raw.githubusercontent.com/doc4child/images/bookstack2.png",
 			"note": "Default login is admin@admin.com with a password of password. The database created is called bookstackapp and the database user is called bookstack",
 			"platform": "linux",
 			"repository": {
 			  "stackfile": "stacks/bookstack/bookstack.yml",
-			  "url": "https://github.com//doc4child/templates"
+			  "url": "https://github.com/doc4child/templates"
 			},
 			"title": "Bookstack",
 			"type": 3
@@ -468,13 +468,13 @@
 				"name": "PORT"
 			  }
 			],
-			"logo": "https://raw.githubusercontent.com//doc4child/images/nextcloud-icon.png",
+			"logo": "https://raw.githubusercontent.com/doc4child/images/nextcloud-icon.png",
 			"name": "nextcloud",
 			"note": "The database user is nextcloud and the database is nextcloud_db. The host of the database will be located at the bottom of the DB conotainer in portainer.",
 			"platform": "linux",
 			"repository": {
 			  "stackfile": "stacks/nextcloud/nextcloud.yml",
-			  "url": "https://github.com//doc4child/templates"
+			  "url": "https://github.com/doc4child/templates"
 			},
 			"title": "Nextcloud",
 			"type": 3
@@ -529,7 +529,7 @@
 			"platform": "linux",
 			"repository": {
 			  "stackfile": "stacks/owncloud/owncloud.yml",
-			  "url": "https://github.com//doc4child/templates"
+			  "url": "https://github.com/doc4child/templates"
 			},
 			"title": "Owncloud",
 			"type": 3
