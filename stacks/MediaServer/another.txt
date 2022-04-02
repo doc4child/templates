@@ -1,0 +1,1 @@
+https://github.com/wbollock/Radarr-and-Sonarr-Setup/blob/master/Docker-Compose_Setup.md
