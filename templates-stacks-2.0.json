@@ -82,7 +82,8 @@
 				},
 				{
 					"name": "npm_XX",
-					"label": "npm directory where let's encrypt live certificate links are present, replace XX with number in npm-XX"
+					"label": "npm-XX (replace XX with number-read description)",
+					"description": "npm directory where let's encrypt live certificate links are present, replace XX with number in npm-XX"
 				},
 				{
 					"name": "OPENLDAP_PORT",
@@ -115,17 +116,17 @@
 				{
 					"name": "auth_mysqldb_password",
 					"default": "auth_mysqldb_password",
-					"label": "auth_mysqldb_password"
+					"label": "mysql db password"
 				},
 				{
 					"name": "auth_mysqldb_root_password",
 					"default": "auth_mysqldb_root_password",
-					"label": "auth_mysqldb_root_password"
+					"label": "mysql db root password"
 				},
 				{
-					"name": "auth_mysqldb_password",
-					"default": "auth_mysqldb_password",
-					"label": "auth_mysqldb_password"
+					"name": "auth_redis_password",
+					"default": "auth_redis_password",
+					"label": "redis password"
 				}
 			]
 		},
