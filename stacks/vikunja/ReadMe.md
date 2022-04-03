@@ -22,7 +22,7 @@ Go to portainer and delete stack.
 Remove associated volumes from host file system.
 
 ```
-rm -R /bolumes/vikunja
+rm -R /volumes/vikunja
 
 ```
 
