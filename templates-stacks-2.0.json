@@ -4,6 +4,7 @@
 		{
 			"type": 3,
 			"title": "WordPress",
+			"name": "WordPress",
 			"description": "WordPress setup with a MySQL database",
 			"note": "Deploys a WordPress instance connected to a MySQL database.",
 			"categories": [
@@ -26,6 +27,7 @@
 		{
 			"type": 3,
 			"title": "OpenLDAP",
+			"name": "OpenLDAP",
 			"description": "Open LDAP with LDAP Admin",
 			"note": "Create directories and set config file - instructions at <p><h1><a href='https://github.com/doc4child/templates/blob/master/stacks/authentication/ReadMe.md' target='_blank'>ReadMe</a></h1></p>",
 			"categories": [
@@ -96,7 +98,8 @@
 		},
 		{
 			"type": 3,
-			"title": "Authelia",
+			"title": "Authentication",
+			"name": "Authentication",
 			"description": "Authorization tools stack",
 			"note": "Create directories and set config file based on instructions at <a href='https://github.com/doc4child/templates/blob/master/stacks/Authentication/ReadMe.md' target='_blank'>here</a>",
 			"categories": [
@@ -129,6 +132,7 @@
 		{
 			"type": 3,
 			"title": "Monitoring",
+			"name": "Monitoring",
 			"description": "Monitoring tools stack",
 			"note": "Create directories and set config file based on instructions at <a href='https://github.com/doc4child/templates/blob/master/stacks/monitoring/ReadMe.md' target='_blank'>here</a>",
 			"categories": [
@@ -161,6 +165,7 @@
 		{
 			"type": 3,
 			"title": "Watchtower",
+			"name": "Watchtower",
 			"description": "Watchtower",
 			"platform": "linux",
 			"logo": "https://containrrr.dev/watchtower/images/logo-450px.png",
@@ -179,6 +184,7 @@
 		{
 			"type": 3,
 			"title": "OpenAMT",
+			"name": "OpenAMT",
 			"description": "OpenAMT Cloud Toolkit",
 			"note": "MPS password needs to be 8-32 characters including one uppercase, one lowercase letters, one base-10 digit and one special character.",
 			"categories": [
@@ -227,6 +233,7 @@
 		{
 			"type": 3,
 			"title": "FDO",
+			"name": "FDO",
 			"description": "FDO",
 			"platform": "linux",
 			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/intel.png",
@@ -270,6 +277,7 @@
 				"url": "https://github.com/doc4child/templates"
 			},
 			"title": "Vikunja",
+			"name": "Vikunja",
 			"type": 3
 		},
 		{
@@ -284,7 +292,6 @@
 				}
 			],
 			"logo": "https://dashy.to/img/dashy.png",
-			"name": "Stash",
 			"note": "## Keep configs, scrapers, and plugins here. </p><p> - /portainer/Files/AppData/Config/stash:/root/.stash </p><p> ## Point this at your collection. </p><p> - ./data:/data </p><p> ## This is where your stash's metadata lives </p><p> - /portainer/Files/AppData/Config/stashmeta:/metadata </p><p> ## Any other cache content. </p><p> - /portainer/Files/AppData/Config/stashcache:/cache </p><p> ## Where to store generated content (screenshots,previews,transcodes,sprites) </p><p> - /portainer/Files/AppData/Config/stashgenerated:/generated",
 			"platform": "linux",
 			"repository": {
@@ -292,6 +299,7 @@
 				"url": "https://github.com/doc4child/templates"
 			},
 			"title": "Stash",
+			"name": "Stash",
 			"type": 3
 		},
 		{
@@ -307,6 +315,7 @@
 				"url": "https://github.com/doc4child/templates"
 			},
 			"title": "Rocket Chat",
+			"name": "Rocket Chat",
 			"type": 3
 		},
 		{
@@ -423,6 +432,7 @@
 				"url": "https://github.com/doc4child/templates"
 			},
 			"title": "Bookstack",
+			"name": "Bookstack",
 			"type": 3
 		},
 		{
