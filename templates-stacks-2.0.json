@@ -257,7 +257,7 @@
 			"categories": [
 				"Family App Server"
 			],
-			"description": "<p>Vikunja is a self hosted, open-source to-do list application</p><p><h1><a href='https://github.com/doc4child/templates/blob/master/stacks/vikunja/ReadMe.md' target='_blank'>ReadMe</a></h1></p> ",
+			"description": " Vikunja is a self hosted, open-source to-do list application ",
 			"env": [
 				{
 					"name": "PUID",
@@ -276,7 +276,7 @@
 				}
 					],
 			"logo": "https://raw.githubusercontent.com/go-vikunja/frontend/main/public/images/icons/android-chrome-192x192.png",
-			"note": "Vikunja is a self hosted, open-source to-do list application",
+			"note": "<p>Vikunja is a self hosted, open-source to-do list application</p><p><h1><a href='https://github.com/doc4child/templates/blob/master/stacks/vikunja/ReadMe.md' target='_blank'>ReadMe</a></h1></p> ",
 			"platform": "linux",
 			"repository": {
 				"stackfile": "stacks/vikunja/vikunja.yml",
