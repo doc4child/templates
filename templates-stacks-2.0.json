@@ -380,7 +380,7 @@
 			"platform": "linux",
 			"repository": {
 			  "stackfile": "stacks/navidrome/navidrome.yml",
-			  "url": "https://github.com/xneo1/portainer_templates"
+			  "url": "https://github.com/doc4child/templates"
 			},
 			"title": "Navidrome",
 			"type": 3
