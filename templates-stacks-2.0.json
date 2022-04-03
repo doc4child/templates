@@ -379,8 +379,8 @@
 			"name": "Navidrome",
 			"platform": "linux",
 			"repository": {
-			  "stackfile": "stacks/navidrome/navidrome.yml",
-			  "url": "https://github.com/doc4child/templates"
+				"url": "https://github.com/doc4child/templates",
+				"stackfile": "stacks/navidrome/navidrome.yml"
 			},
 			"title": "Navidrome",
 			"type": 3
