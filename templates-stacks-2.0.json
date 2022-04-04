@@ -165,6 +165,39 @@
 		},
 		{
 			"type": 3,
+			"title": "Pihole",
+			"name": "Pihole",
+			"description": "Pihole adblocking stack",
+			"note": "Create directories and set config file - instructions at <p><h1><a href='https://github.com/doc4child/templates/blob/master/stacks/pihole/pihole-ReadMe.md' target='_blank'>ReadMe</a></h1></p>",
+			"categories": [
+				"Adblocking"
+			],
+			"platform": "linux",
+			"logo": "https://upload.wikimedia.org/wikipedia/commons/0/00/Pi-hole_Logo.png",
+			"repository": {
+				"url": "https://github.com/doc4child/templates",
+				"stackfile": "stacks/pihole/pihole.yml"
+			},
+			"env": [
+				{
+					"name": "PUID",
+					"default": "1000",
+					"label": "PUID"
+				},
+				{
+					"name": "PGID",
+					"default": "1000",
+					"label": "PGID"
+				},
+				{
+					"name": "PIHOLE_PORT",
+					"default": "8069",
+					"label": "Pihole Port"
+				}
+			]
+		},
+		{
+			"type": 3,
 			"title": "Watchtower",
 			"name": "Watchtower",
 			"description": "Watchtower",

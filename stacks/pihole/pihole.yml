@@ -2,6 +2,7 @@
 version: "3"
 
 # https://github.com/pi-hole/docker-pi-hole/blob/master/README.md
+# https://firebog.net/ for adding blocklists in group Mx adlists
 
 services:
   pihole:
@@ -14,10 +15,11 @@ services:
       - "53:53/tcp"
       - "53:53/udp"
       - "67:67/udp"
-      - "8069:80/tcp"
-      - "44369:443/tcp"
+      - "${PIHOLE_PORT}:80/tcp"
     environment:
       TZ: 'America/Chicago'
+      PUID: ${PUID}
+      PGID: ${PGID}
       WEBPASSWORD: /run/secrets/pihole_password 
     secrets:
       - pihole_password
