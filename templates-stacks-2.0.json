@@ -37,7 +37,7 @@
 			"logo": "https://upload.wikimedia.org/wikipedia/en/c/c7/OpenLDAP-logo.png",
 			"repository": {
 				"url": "https://github.com/doc4child/templates",
-				"stackfile": "stacks/authelia/ldap-stack.yml"
+				"stackfile": "stacks/authentication/ldap-stack.yml"
 			},
 			"env": [
 				{
