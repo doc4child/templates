@@ -1,0 +1,83 @@
+# NextCLoud with MariaDB/MySQL
+#
+# Access via  "http://$(docker-machine ip):4080" sameport as nc container host port
+#
+# During initial NextCLoud setup, 
+# During configuration use preferred admin username and password of your choice.
+# select "Storage & database" --> "Configure the database" --> "MySQL/MariaDB"
+# Database user: nextcloud_user
+# Database password: password
+# Database name: nc
+# Database host: replace "localhost" with "nc_mariadb" the same name as the data base service name.
+#
+#
+# The reason for the more refined data persistence in the volumes is because if you were to
+# use just the the '/var/www/html' then everytime you would want/need to update/upgrade
+# NextCloud you would have to go into the volume on the host machine and delete 'version.php'
+#
+
+version: '3'
+services:
+  nc_mariadb: 
+    image: mariadb
+    container_name: nc_mariadb_cont
+    environment:
+      MYSQL_ROOT_PASSWORD: 'secretpassword'
+      MYSQL_DATABASE: 'nc'
+      MYSQL_USER: 'nextcloud_user'
+      MYSQL_PASSWORD: 'password'
+    restart: unless-stopped 
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW --log-bin=nc_mariadb_host-bin --innodb-file-per-table=1 --skip-innodb-read-only-compressed
+    domainname: nc.doc4child.com
+    networks:
+      - nc_db_network
+    hostname: nc_mariadb_host
+    volumes:
+      - /volumes/nc/nc-db:/var/lib/mysql
+  nc_pma:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: nc_pma_cont
+    hostname: nc_pma_host
+    restart: unless-stopped
+    ports:
+      - 4060:80
+    environment:
+      - PMA_HOST=nc_mariadb
+    depends_on:
+      - nc_mariadb
+    networks:
+      - docker-network
+      - nc_db_network
+
+  nc:
+    image: nextcloud:22
+    container_name: nc_cont
+    ports:
+      - 4080:80
+    links:
+      - nc_mariadb
+    volumes:
+      - /volumes/nc/web:/var/www/html
+      - /volumes/nc/apps:/var/www/html/custom_apps 
+      - /volumes/nc/config:/var/www/html/config 
+      - /volumes/nc/data:/var/www/html/data 
+      - /volumes/nc/theme:/var/www/html/themes/
+    restart: unless-stopped
+    networks:
+      - docker-network
+      - nc_db_network
+volumes:
+  web:
+  apps:
+  config:
+  data:
+  theme: 
+  nc-db:
+
+networks:
+  docker-network:
+      external:
+        name: docker-network
+  nc_db_network:
+    name: nc_db_network #this will make network not change name from nc_db_network
+    driver: bridge
