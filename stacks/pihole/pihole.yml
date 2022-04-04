@@ -20,7 +20,7 @@ services:
       TZ: 'America/Chicago'
       PUID: ${PUID}
       PGID: ${PGID}
-      WEBPASSWORD: /run/secrets/pihole_password 
+      WEBPASSWORD_FILE: /run/secrets/pihole_password 
     secrets:
       - pihole_password
     # Volumes store your data between container upgrades
