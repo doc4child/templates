@@ -35,13 +35,13 @@ mkdir -p /secrets/pihole
 
 # Create Secrets
 
---this did not work for me, still had to change password using `pihole -a -p` on host >docker exect -it pihole bash and then run that command to change password
-
-CURRENT_PATH=$(pwd) 
+```
 cd /secrets/pihole
 touch pihole_password.txt
 openssl rand -base64 20 >> pihole_password.txt 
-cd $CURRENT_PATH
+
+```
+--this did not work for me, still had to change password using `pihole -a -p` on host >docker exect -it pihole bash and then run that command to change password
 
 # pihole.local
 
