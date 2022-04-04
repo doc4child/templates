@@ -1,47 +1,4 @@
 
-### Useful Supplimental Software Links: 
-
-* [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/)
-* [mRemoteNG](https://mremoteng.org/)
-* [7zip](https://www.7-zip.org/download.html)
-* [VNC Viewer](https://www.realvnc.com/en/connect/download/viewer/)
-* [Draw.io](https://www.draw.io)
-* [BalenaEther](https://www.balena.io/etcher/)
-* [Rufus](http://rufus.ie/en/)
- 
-### Supplimental YouTube Videos:
-
-Below is a YouTube playlist on various subjects around selfhosting. Some items, like the Proxmox install, have various videos on the same general subject. This has been done in case one presenter is preferable over another, and so things can be compared, if needed.  
-
-[YouTube Playlist](https://youtube.com/playlist?list=PLGk2on7ccZOMMdaljjX8jeDpWhJGPzrcs)
-
-In addition to this, here is LearnLinuxTV's full Proxmox VE Video Course on YouTube: 
-
-[Course](https://youtube.com/playlist?list=PLT98CRl2KxKHnlbYhtABg6cF50bYa8Ulo)
-  
-## New Proxmox Host - Prep
-
- One of the best ways to host your servers is on an older machine you may have lying around. You can flash it/image it with Proxmox, and Proxmox will allow you to use all the hardware in your older machine for a number of little servers, as virtual machines, within proxmox itself. 
- 
- * Prep the hardware -> Clean it, if needed. 
- 
- * Flash a USB stick with an image from the Proxmox website: [Proxox Website](https://www.proxmox.com/en/downloads)
- 
- * Image your old computer -> Have the computer boot from the USB stick, instead of it's internal harddrive, and then install Proxmox
- 
- * After doing all of the install steps, reboot the machine at the noted time in the install instructions, and then navigate to your management interface. Often times, it's:
-  
-    * https://IPAddress:8006/  
-
-
-## New Ubuntu Server/VM Setup Instructions - Prep
-
-### Where to get the OS image:
-
-* [Ubuntu Desktop](https://ubuntu.com/download/desktop)
-
-* [Ubuntu Server](https://ubuntu.com/download/server)
-
 
 ### Commands to prep your system, after Install:
 
@@ -191,39 +148,6 @@ In addition to this, here is LearnLinuxTV's full Proxmox VE Video Course on YouT
 
 Often you can create a server version of something you'd like to display on a wall display at home, and then use a raspberry pi to connect to that webpage on boot automatically. You can use this set of instructions, and just substitute out the dakboard specific elements, and use it to setup a raspberry pi to connect automatically to one of your running dashboard containers' URL. 
 
-[Instructions](https://blog.dakboard.com/diy-wall-display/)
-
- ## An Idea Regarding Personal Dashboards
- 
- I've found, when it comes to building a main personal web dashboard, that none of the options did everything I wanted it to. So, I started nesting dashboards together. 
- 
- For the below setup example, I've nested both Organizr and Flame, inside of Muximux. 
- 
- I've set the default page to the Flame Dashboard, and to bypass the splash screen, so that when I load the Muximux Dashboard the Flame Dashboard is naturally nested.  The Flame dashboard has all of the links that will open in a new window. This way, I never close my dashboard. Items that I want accessable for the whole family, or easy access for myself, are located at the top bar of Muximux, and will open in an iFrame. 
- 
- <img width="760" alt="1" src="https://user-images.githubusercontent.com/84437811/150927161-57b22f78-0139-4c43-a805-b643f20385c3.png">
- 
- One of the cool things about nesting dashboards this way is that you can have a menu at both the top and left hand side of the browser. I've used Muxmix for the top, and Organizr for the side bar that is specifically within the usenet server menu. (You can also add authentication to this submenu, if you wanted to have an administration section to your dashboard.)
- 
- <img width="173" alt="2" src="https://user-images.githubusercontent.com/84437811/150927172-b9306459-48d0-49c0-a06c-3144fe03be85.png">
-
-Here is an example of one of the other menu items open within the Dashboard. 
-
- <img width="940" alt="3" src="https://user-images.githubusercontent.com/84437811/150927181-d4403a26-b626-4f16-b029-ec7dd38983a3.png">
-
-
- # Adding Further Containers: What I'm currently looking for
- 
- I'm currently wanting to add the following containers 
-
- * Habitica
-
-  If you'd like to assist with the above, please get into contact and I'll see about adding the applicable code to expand the list 
-  
-  Note: any supplimental setup notes can be placed in the description -> Habitica, I'm thinking, would probably need this.
-
-# ** From the Forked Authors Notes ** 
-
 Previous Authors
 * **NASHosted** - *Current Work* - [NASHOSTED](https://github.com/nashosted)
 * **SelfhostedPro** - *Current Work* - [SelfhostedPro](https://github.com/SelfhostedPro)
@@ -237,6 +161,12 @@ See also the list of [contributors](https://github.com/Qballjos/portainer_templa
 
 Other Templates that items were discovered/pulled from will be added when time allows. A various list of other templates have been noted below where some items have been sourced. 
 
+[Portainer default](https://raw.githubusercontent.com/portainer/templates/master/templates-2.0.json)
+
+[Microftwilde](https://raw.githubusercontent.com/mycroftwilde/portainer_templates/master/Template/template.json)
+
+[Microftwilde Github](https://github.com/mycroftwilde/portainer_templates)
+
 [technorabilia](https://raw.githubusercontent.com/technorabilia/portainer-templates/main/lsio/templates/templates-2.0.json)
 
 [mikestraney](https://raw.githubusercontent.com/mikestraney/portainer-templates/master/templates.json)
@@ -246,11 +176,21 @@ Other Templates that items were discovered/pulled from will be added when time a
 [xneo1](https://raw.githubusercontent.com/xneo1/portainer_templates/master/Template/template.json)
 
 
-# * Mental Health *
+https://raw.githubusercontent.com/ntv-one/portainer/main/template.json 
 
- As a side note, not related, I'm a large advocate of Mental Health. If you are having a rough time right now, please see my Mental Health Youtube Playlist:
- 
- [Mental Health Youtube Playlist](https://youtube.com/playlist?list=PLGk2on7ccZONCobYxwGdvwMcF43gIKmqk)
- 
+
+https://raw.githubusercontent.com/dnburgess/self-hosted-template/master/template.json
+
+https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Template/template.json
+
+https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/portainer-2.0/Template/template.json
+
+https://raw.githubusercontent.com/technorabilia/portainer-templates/main/lsio/templates/templates-2.0.json
+
+https://raw.githubusercontent.com/mikestraney/portainer-templates/master/templates.json
+
+
+https://raw.githubusercontent.com/doc4child/templates/master/templates-stacks-2.0.json
+
 
 
