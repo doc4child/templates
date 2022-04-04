@@ -1,25 +1,5 @@
 
-# for openldap
-# in this most recent config, used live certificates and that seemed to work.
-# it does generate dhpram.pem file in the /volumes/npm/letsencrypt folder since that is the volume for certs. The certificate path from there onwards is mentioned in the filename environmental variable like-
-#    LDAP_TLS_CRT_FILENAME: /live/${npm_XX}/cert.pem
-
-# for phpldapadmin, it used the certificate links to the let's encrypt certificates.
-
-# for NPM
-# entry ldap.${DOMAIN}.${TLD} needed https at forward using "18443" forward with port 80 did not work
-
-# this worked, login with following credentials in the phpLDAPadmin
-# cn=admin,dc=${DOMAIN},dc=${TLD}
-# ${CHANGEME}
-
-# cn=user-ro,dc=${DOMAIN},dc=${TLD}
-# Passowrd ro_pass
-
-# ref used was https://github.com/osixia/docker-openldap/issues/120
-# and https://github.com/Ramhm/openldap/blob/master/docker-compose.yml 
-
-# replace ${DOMAIN} ${CHANGEME} ${npm_XX} docker-network
+# ReadMe file for instructions
 
 version: '2'
 services:

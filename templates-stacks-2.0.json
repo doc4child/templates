@@ -82,6 +82,7 @@
 				},
 				{
 					"name": "npm_XX",
+					"default": "npm-20",
 					"label": "npm-XX (replace XX with number-read description)",
 					"description": "npm directory where let's encrypt live certificate links are present, replace XX with number in npm-XX"
 				},
