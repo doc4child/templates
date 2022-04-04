@@ -6,6 +6,7 @@ services:
   openldap:
     image: osixia/openldap:1.1.8
     container_name: ldap_openldap
+    restart: unless-stopped
     volumes:
       #- /volumes/npm/letsencrypt/archive/${npm_XX}:/container/service/slapd/assets/certs/
       - /volumes/npm/letsencrypt:/container/service/slapd/assets/certs
@@ -48,6 +49,7 @@ services:
   phpldapadmin:
     image: osixia/phpldapadmin:latest
     container_name: ldap_phpldapadmin
+    restart: unless-stopped
     volumes:
       - /volumes/npm/letsencrypt:/container/service/phpldapadmin/assets/apache2/certs
       - /volumes/ldap/phpldapadmin:/var/www/phpldapadmin
