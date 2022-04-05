@@ -17,8 +17,8 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
     volumes:
-      - /volumes/monitoring/prometheus/config:/etc/prometheus
-      - /volumes/monitoring/prometheus:/prometheus
+      - /volumes/monitoring/prometheus-data/config:/etc/prometheus
+      - /volumes/monitoring/prometheus-data:/prometheus
     restart: unless-stopped
     command:
       - "--config.file=/etc/prometheus/prometheus.yml"

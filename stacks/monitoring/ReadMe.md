@@ -1,13 +1,12 @@
 ## Monitoring Stack installation
 ### Creation of following volume directories on the host file system will be needed
 ```
-    mkdir -p /volumes/monitoring/prometheus/config
-    mkdir -p /volumes/monitoring/prometheus
+    mkdir -p /volumes/monitoring/prometheus-data/config
     mkdir -p /volumes/monitoring/grafana-data        
-    cd /volumes/monitoring/prometheus/config
+    cd /volumes/monitoring/prometheus-data/config
     wget https://raw.githubusercontent.com/doc4child/templates/master/stacks/monitoring/prometheus.yml
-    chown -R 1000 /volumes/monitoring
-    chmod -R 777 /volumes/monitoring
+    chown -R 1000:1000 /volumes/monitoring
+    chmod -R 755 /volumes/monitoring
 ```
 
 
