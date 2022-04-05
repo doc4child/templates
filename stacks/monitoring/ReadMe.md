@@ -5,17 +5,17 @@
     mkdir -p /volumes/monitoring/grafana-data        
     cd /volumes/monitoring/prometheus-data/config
     wget https://raw.githubusercontent.com/doc4child/templates/master/stacks/monitoring/prometheus.yml
-    chown -R 99:99 /volumes/monitoring/prometheus-data
+    chown -R 65534:65534 /volumes/monitoring/prometheus-data
     chown -R 472:472 /volumes/monitoring/grafana-data
 
 ```
-Prometheus runs as the user "nobody" (UID/GID 99/99)
+Prometheus runs as the user "nobody" (UID/GID 65534/65534)
 Grafana docker container (id = 472, group = 472).
 
 
-    chown -R 1000:1000 /volumes/monitoring
+    <!-- chown -R 1000:1000 /volumes/monitoring
     chmod -R 777 /volumes/monitoring
-    chmod g+s /volumes/monitoring
+    chmod g+s /volumes/monitoring -->
 
 
 
