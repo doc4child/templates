@@ -1,0 +1,32 @@
+
+
+
+version: "3.6"
+
+services:
+  rstudio:
+    image: rocker/rstudio:latest
+    container_name: rstudio
+    hostname: rstudio
+    restart: unless-stopped
+    volumes:
+      - '/volumes/rstudio/home:/home/rstudio' 
+      - '/volumes/rstudio/projects:/home/rstudio/projects'
+    networks:
+      - docker-network
+    environment:
+      - PASSWORD=${PASSWORD}
+      - USER=doc4child
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    ports:
+      - 8787:8787/tcp
+networks:
+  docker-network:
+      external:
+        name: docker-network      
+volumes:
+  home:
+  projects:
+
+
