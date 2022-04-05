@@ -148,16 +148,6 @@
 			},
 			"env": [
 				{
-					"name": "PUID",
-					"default": "1000",
-					"label": "PUID"
-				},
-				{
-					"name": "PGID",
-					"default": "1000",
-					"label": "PGID"
-				},
-				{
 					"name": "CADVISOR_PORT",
 					"default": "8084",
 					"label": "cAdvisor Port"
