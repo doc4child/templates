@@ -195,9 +195,14 @@
 					"name": "PUID"
 				},
 				{
-					"default": "100",
+					"default": "1000",
 					"label": "PGID",
 					"name": "PGID"
+				},
+				{
+					"default": "https://bookstack.mydomain.com",
+					"label": "App URL",
+					"name": "APP_URL"
 				},
 				{
 					"label": "TZ",
