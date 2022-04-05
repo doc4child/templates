@@ -192,30 +192,3 @@ https://raw.githubusercontent.com/mikestraney/portainer-templates/master/templat
 
 https://raw.githubusercontent.com/doc4child/templates/master/templates-stacks-2.0.json
 
-# NAS to Ubuntu mount
-```
-sudo mount -t nfs 10.0.0.100:/share/Multimedia /mnt -o vers=4
-```
-https://www.qnap.com/en-us/how-to/knowledge-base/article/how-to-enable-and-setup-host-access-for-nfs-connection
-
-Open the /etc/fstab file with your text editor :
-```
-sudo nano /etc/fstab
-```
-Copy
-Add the following line to the file: /etc/fstab
-
-```
-# <file system>                <dir>       <type>   <options>   <dump>	<pass>
-10.0.0.100:/share/Multimedia   /mnt         nfs      defaults    0       0
-```
-
-Run the mount command in one of the following forms to mount the NFS share:
-```
-mount /mnt
-mount 10.0.0.100:/share/Multimedia
-```
-
-The mount command, will read the content of the /etc/fstab and mount the share.
-
-Next time you reboot the system the NFS share will be mounted automatically.
