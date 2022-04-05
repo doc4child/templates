@@ -1,0 +1,46 @@
+version: "3"
+services:
+  jamovi:
+    image: jamovi/jamovi
+    container_name: jamovi
+    hostname: jamovi    
+    restart: unless-stopped
+    command:
+      - /usr/bin/python3 -m jamovi.server 41337 --if=*
+    entrypoint:
+      - /bin/sh
+      - -c
+    environment:
+      - JAMOVI_HOSTNAME=jamovi.${DOMAIN}.com
+      - PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      - LANG=en_US.UTF-8
+      - LD_LIBRARY_PATH=/usr/local/lib/R/lib
+      - JAMOVI_HOME=/usr/lib/jamovi
+      - PYTHONPATH=/usr/lib/jamovi/server
+      - R_LIBS=/usr/local/lib/R/library
+      - JAMOVI_SESSION_EXPIRES=0
+    ipc: private
+    # labels:
+    #   com.docker.compose.config-hash: ceda72980f6c7bd30e6b43b7682d45151d745cd5533bcbc442d26910de88a48e
+    #   com.docker.compose.container-number: 1
+    #   com.docker.compose.oneoff: False
+    #   com.docker.compose.project: jamovi
+    #   com.docker.compose.project.config_files: docker-compose.yaml
+    #   com.docker.compose.project.working_dir: /volumes/jamovi
+    #   com.docker.compose.service: jamovi
+    #   com.docker.compose.version: 1.29.2
+    # logging:
+    #   driver: json-file
+    #   options: {}
+    networks:
+      - docker-network
+    ports:
+      - 41337:41337/tcp
+      - 41338:41338/tcp
+      - 41339:41339/tcp
+    stdin_open: true
+    volumes:
+      - /volumes/jamovi/Documents:/root/Documents:rw
+networks:
+  docker-network:
+    external: true
