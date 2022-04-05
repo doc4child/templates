@@ -27,9 +27,7 @@ services:
     container_name: grafana
     ports:
       - "3000:3000"
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
+    user: "${PUID}:${PGID}"
     volumes:
       - /volumes/monitoring/grafana-data:/var/lib/grafana
     restart: unless-stopped
