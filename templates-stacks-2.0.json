@@ -3,24 +3,34 @@
 	"templates": [
 		{
 			"type": 3,
-			"title": "WordPress",
-			"name": "WordPress",
-			"description": "WordPress setup with a MySQL database",
-			"note": "Deploys a WordPress instance connected to a MySQL database.",
+			"title": "Authentication",
+			"name": "Authentication",
+			"description": "Authorization tools stack",
+			"note": "Create directories and set config file based on instructions at <a href='https://github.com/doc4child/templates/blob/master/stacks/Authentication/ReadMe.md' target='_blank'>here</a>",
 			"categories": [
-				"CMS"
+				"Authentication"
 			],
 			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
+			"logo": "https://cdn-icons.flaticon.com/png/512/1329/premium/1329352.png?token=exp=1648812114~hmac=efbc1e62d808ffa1eb765bfc26f6473e",
 			"repository": {
 				"url": "https://github.com/doc4child/templates",
-				"stackfile": "stacks/wordpress/docker-compose.yml"
+				"stackfile": "stacks/authentication/authelia-stack.yml"
 			},
 			"env": [
 				{
-					"name": "MYSQL_DATABASE_PASSWORD",
-					"label": "Database root password",
-					"description": "Password used by the MySQL root user."
+					"name": "auth_mysqldb_password",
+					"default": "auth_mysqldb_password",
+					"label": "mysql db password"
+				},
+				{
+					"name": "auth_mysqldb_root_password",
+					"default": "auth_mysqldb_root_password",
+					"label": "mysql db root password"
+				},
+				{
+					"name": "auth_redis_password",
+					"default": "auth_redis_password",
+					"label": "redis password"
 				}
 			]
 		},
@@ -95,39 +105,6 @@
 					"name": "LDAPADMIN_PORT",
 					"default": "18443",
 					"label": "LDAP Admin Port"
-				}
-			]
-		},
-		{
-			"type": 3,
-			"title": "Authentication",
-			"name": "Authentication",
-			"description": "Authorization tools stack",
-			"note": "Create directories and set config file based on instructions at <a href='https://github.com/doc4child/templates/blob/master/stacks/Authentication/ReadMe.md' target='_blank'>here</a>",
-			"categories": [
-				"Authentication"
-			],
-			"platform": "linux",
-			"logo": "https://cdn-icons.flaticon.com/png/512/1329/premium/1329352.png?token=exp=1648812114~hmac=efbc1e62d808ffa1eb765bfc26f6473e",
-			"repository": {
-				"url": "https://github.com/doc4child/templates",
-				"stackfile": "stacks/authentication/authelia-stack.yml"
-			},
-			"env": [
-				{
-					"name": "auth_mysqldb_password",
-					"default": "auth_mysqldb_password",
-					"label": "mysql db password"
-				},
-				{
-					"name": "auth_mysqldb_root_password",
-					"default": "auth_mysqldb_root_password",
-					"label": "mysql db root password"
-				},
-				{
-					"name": "auth_redis_password",
-					"default": "auth_redis_password",
-					"label": "redis password"
 				}
 			]
 		},
@@ -208,72 +185,24 @@
 		},
 		{
 			"type": 3,
-			"title": "OpenAMT",
-			"name": "OpenAMT",
-			"description": "OpenAMT Cloud Toolkit",
-			"note": "MPS password needs to be 8-32 characters including one uppercase, one lowercase letters, one base-10 digit and one special character.",
+			"title": "WordPress",
+			"name": "WordPress",
+			"description": "WordPress setup with a MySQL database",
+			"note": "Deploys a WordPress instance connected to a MySQL database.",
 			"categories": [
-				"Cloud"
+				"CMS"
 			],
 			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/intel.png",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
 			"repository": {
 				"url": "https://github.com/doc4child/templates",
-				"stackfile": "stacks/openamt/docker-compose.yml"
+				"stackfile": "stacks/wordpress/docker-compose.yml"
 			},
 			"env": [
 				{
-					"name": "POSTGRES_USER",
-					"label": "Database user"
-				},
-				{
-					"name": "POSTGRES_PASSWORD",
-					"label": "Database password"
-				},
-				{
-					"name": "MPS_USER",
-					"label": "MPS user"
-				},
-				{
-					"name": "MPS_PASSWORD",
-					"label": "MPS password"
-				},
-				{
-					"name": "MPS_COMMON_NAME",
-					"label": "MPS URL",
-					"description": "Used to connect to the MPS API."
-				},
-				{
-					"name": "MPS_SECRET",
-					"label": "MPS Secret",
-					"description": "Strong secret key used to log into MPS."
-				},
-				{
-					"name": "VAULT_SECRET",
-					"label": "Vault secret",
-					"description": "Secret token used to log into Vault (don't include '.' character)."
-				}
-			]
-		},
-		{
-			"type": 3,
-			"title": "FDO",
-			"name": "FDO",
-			"description": "FDO",
-			"platform": "linux",
-			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/intel.png",
-			"repository": {
-				"url": "https://github.com/doc4child/templates",
-				"stackfile": "stacks/fdo/docker-stack.yml"
-			},
-			"env": [
-				{
-					"name": "owner_api_user",
-					"label": "API Username"
-				},
-				{
-					"name": "owner_api_password",
-					"label": "API Password"
+					"name": "MYSQL_DATABASE_PASSWORD",
+					"label": "Database root password",
+					"description": "Password used by the MySQL root user."
 				}
 			]
 		},
@@ -298,7 +227,7 @@
 					"default": "8083",
 					"label": "Vikunja Port"
 				}
-					],
+			],
 			"logo": "https://raw.githubusercontent.com/go-vikunja/frontend/main/public/images/icons/android-chrome-192x192.png",
 			"note": "<p>Vikunja is a self hosted, open-source to-do list application</p><p><h1><a href='https://github.com/doc4child/templates/blob/master/stacks/vikunja/ReadMe.md' target='_blank'>ReadMe</a></h1></p> ",
 			"platform": "linux",
@@ -595,6 +524,77 @@
 			},
 			"title": "Petio",
 			"type": 3
+		},
+		{
+			"type": 3,
+			"title": "OpenAMT",
+			"name": "OpenAMT",
+			"description": "OpenAMT Cloud Toolkit",
+			"note": "MPS password needs to be 8-32 characters including one uppercase, one lowercase letters, one base-10 digit and one special character.",
+			"categories": [
+				"Cloud"
+			],
+			"platform": "linux",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/intel.png",
+			"repository": {
+				"url": "https://github.com/doc4child/templates",
+				"stackfile": "stacks/openamt/docker-compose.yml"
+			},
+			"env": [
+				{
+					"name": "POSTGRES_USER",
+					"label": "Database user"
+				},
+				{
+					"name": "POSTGRES_PASSWORD",
+					"label": "Database password"
+				},
+				{
+					"name": "MPS_USER",
+					"label": "MPS user"
+				},
+				{
+					"name": "MPS_PASSWORD",
+					"label": "MPS password"
+				},
+				{
+					"name": "MPS_COMMON_NAME",
+					"label": "MPS URL",
+					"description": "Used to connect to the MPS API."
+				},
+				{
+					"name": "MPS_SECRET",
+					"label": "MPS Secret",
+					"description": "Strong secret key used to log into MPS."
+				},
+				{
+					"name": "VAULT_SECRET",
+					"label": "Vault secret",
+					"description": "Secret token used to log into Vault (don't include '.' character)."
+				}
+			]
+		},
+		{
+			"type": 3,
+			"title": "FDO",
+			"name": "FDO",
+			"description": "FDO",
+			"platform": "linux",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/intel.png",
+			"repository": {
+				"url": "https://github.com/doc4child/templates",
+				"stackfile": "stacks/fdo/docker-stack.yml"
+			},
+			"env": [
+				{
+					"name": "owner_api_user",
+					"label": "API Username"
+				},
+				{
+					"name": "owner_api_password",
+					"label": "API Password"
+				}
+			]
 		}
 	]
 }

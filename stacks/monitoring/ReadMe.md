@@ -10,7 +10,9 @@
 
 ```
 Prometheus runs as the user "nobody" (UID/GID 65534/65534)
-Grafana docker container (id = 472, group = 472).
+Grafana runs as the user "nobody" (UID/GID 472/472) 
+
+Giving ownership to newlycreated volumes on the host machine let's them write in those respective folders without issues.
 
 
     <!-- chown -R 1000:1000 /volumes/monitoring
@@ -19,19 +21,27 @@ Grafana docker container (id = 472, group = 472).
 
 
 
-Docker volumes and file system permissions
+# Docker volumes and file system permissions
 
 Docker containers are ephemeral (don’t persist data across runs). Most useful applications need some persistent storage. The volume feature offers a way to support this requirement, but it comes with some gotchas regarding file system permissions.
+
 In most deployed setups you will be using a container orchestration mechanism and persistent storage is provided by some public cloud product which may have it’s own way of configuring permissions. However, during local development or in the early iterations of a product the easiest thing is to expose a host directory as a docker volume.
 In short these are the facts to be aware of when configuring a host directory as a volume:
+
 The file permissions set on content in the volume are identical from the perspective of host as well as container.
 Only UIDs (user ids) and GIDs (group ids) matter. For example names and passwords of users and groups do not need to match or even exist in both host and container
+
 The container OS enforces file permissions on all operations made in the container runtime according to its own configuration. For example, if a user A exists in both host and container, adding user A to group B on the host will not allow user A to write to a directory owned by group B inside the container unless group B is created inside the container as well and user A is added to it.
+
 By default the command of a container is run as root
+
 It is possible (on a unix-based system) to set file/directory ownership to a GID which does not belong to any actual group
+
 If you keep the above facts in mind you should be able to configure your containers and volumes without too many surprises. If you’re not familiar with UNIX file permissions I can recommend the official Ubuntu FilePermission wiki page.
+
 An example of how you might configure things conveniently for local development:
 Set group ownership of the directory to be used as volume to some GID (in this example 1024) not used on any actual groups on the host
+
 ```
 chown :1024 /data/myvolume
 ```
@@ -45,9 +55,9 @@ chmod g+s /data/myvolume
 ```
 Create a user in the Dockerfile which is member of the 1024 group
 ```
-RUN addgroup --gid 1024 mygroup
-RUN adduser --disabled-password --gecos "" --force-badname --ingroup 1024 myuser 
-USER myuser
+RUN addgroup --gid 1024 nogroup
+RUN adduser --disabled-password --gecos "" --force-badname --ingroup 1024 nobody
+USER nobody
 ```
 (Optional) Add your host user to the group allowing you to conveniently work with the directory from your host machine
 ```
