@@ -184,6 +184,94 @@
 			]
 		},
 		{
+			"categories": [
+				"Notes Server"
+			],
+			"description": "Bookstack is a free and open source Wiki designed for creating beautiful documentation. Feautring a simple, but powerful WYSIWYG editor it allows for teams to create detailed and useful documentation with ease.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"label": "TZ",
+					"name": "TZ"
+				},
+				{
+					"label": "DATABASE_PASSWORD",
+					"name": "DATABASE_PASSWORD"
+				},
+				{
+					"label": "MYSQL_ROOT_PASSWORD",
+					"name": "MYSQL_ROOT_PASSWORD"
+				},
+				{
+					"label": "PORT",
+					"name": "PORT"
+				}
+			],
+			"logo": "https://github.com/doc4child/templates/blob/master/images/bookstack2.png?raw=true",
+			"note": "Default login is admin@admin.com with a password of password. The database created is called bookstackapp and the database user is called bookstack",
+			"platform": "linux",
+			"repository": {
+				"stackfile": "stacks/bookstack/bookstack.yml",
+				"url": "https://github.com/doc4child/templates"
+			},
+			"title": "Bookstack",
+			"name": "Bookstack",
+			"type": 3
+		},
+		{
+			"categories": [
+				"Family App Server"
+			],
+			"description": "Where are your photos and documents? With Nextcloud you pick a server of your choice, at home, in a data center or at a provider. And that is where your files will be. Nextcloud runs on that server, protecting your data and giving you access from your desktop or mobile devices.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "100",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"label": "TZ",
+					"name": "TZ"
+				},
+				{
+					"label": "DATABASE_PASSWORD",
+					"name": "DATABASE_PASSWORD"
+				},
+				{
+					"label": "MYSQL_ROOT_PASSWORD",
+					"name": "MYSQL_ROOT_PASSWORD"
+				},
+				{
+					"label": "PORT",
+					"name": "PORT"
+				}
+			],
+			"logo": "https://github.com/doc4child/templates/blob/master/images/nextcloud-icon.png?raw=true",
+			"name": "nextcloud",
+			"note": "The database user is nextcloud and the database is nextcloud_db. The host of the database will be located at the bottom of the DB conotainer in portainer.",
+			"platform": "linux",
+			"repository": {
+				"stackfile": "stacks/nextcloud/nextcloud.yml",
+				"url": "https://github.com/doc4child/templates"
+			},
+			"title": "Nextcloud",
+			"type": 3
+		},
+		{
 			"type": 3,
 			"title": "WordPress",
 			"name": "WordPress",
@@ -350,94 +438,7 @@
 			"title": "Navidrome",
 			"type": 3
 		},
-		{
-			"categories": [
-				"Notes Server"
-			],
-			"description": "Bookstack is a free and open source Wiki designed for creating beautiful documentation. Feautring a simple, but powerful WYSIWYG editor it allows for teams to create detailed and useful documentation with ease.",
-			"env": [
-				{
-					"default": "1000",
-					"label": "PUID",
-					"name": "PUID"
-				},
-				{
-					"default": "100",
-					"label": "PGID",
-					"name": "PGID"
-				},
-				{
-					"label": "TZ",
-					"name": "TZ"
-				},
-				{
-					"label": "DATABASE_PASSWORD",
-					"name": "DATABASE_PASSWORD"
-				},
-				{
-					"label": "MYSQL_ROOT_PASSWORD",
-					"name": "MYSQL_ROOT_PASSWORD"
-				},
-				{
-					"label": "PORT",
-					"name": "PORT"
-				}
-			],
-			"logo": "https://github.com/doc4child/templates/blob/master/images/bookstack2.png?raw=true",
-			"note": "Default login is admin@admin.com with a password of password. The database created is called bookstackapp and the database user is called bookstack",
-			"platform": "linux",
-			"repository": {
-				"stackfile": "stacks/bookstack/bookstack.yml",
-				"url": "https://github.com/doc4child/templates"
-			},
-			"title": "Bookstack",
-			"name": "Bookstack",
-			"type": 3
-		},
-		{
-			"categories": [
-				"Family App Server"
-			],
-			"description": "Where are your photos and documents? With Nextcloud you pick a server of your choice, at home, in a data center or at a provider. And that is where your files will be. Nextcloud runs on that server, protecting your data and giving you access from your desktop or mobile devices.",
-			"env": [
-				{
-					"default": "1000",
-					"label": "PUID",
-					"name": "PUID"
-				},
-				{
-					"default": "100",
-					"label": "PGID",
-					"name": "PGID"
-				},
-				{
-					"label": "TZ",
-					"name": "TZ"
-				},
-				{
-					"label": "DATABASE_PASSWORD",
-					"name": "DATABASE_PASSWORD"
-				},
-				{
-					"label": "MYSQL_ROOT_PASSWORD",
-					"name": "MYSQL_ROOT_PASSWORD"
-				},
-				{
-					"label": "PORT",
-					"name": "PORT"
-				}
-			],
-			"logo": "https://github.com/doc4child/templates/blob/master/images/nextcloud-icon.png?raw=true",
-			"name": "nextcloud",
-			"note": "The database user is nextcloud and the database is nextcloud_db. The host of the database will be located at the bottom of the DB conotainer in portainer.",
-			"platform": "linux",
-			"repository": {
-				"stackfile": "stacks/nextcloud/nextcloud.yml",
-				"url": "https://github.com/doc4child/templates"
-			},
-			"title": "Nextcloud",
-			"type": 3
-		},
+
 		{
 			"categories": [
 				"Family App Server"
