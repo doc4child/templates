@@ -13,9 +13,9 @@ services:
     hostname: prometheus
     ports:
       - "9090:9090"
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
+    # environment:
+    #   - PUID=${PUID}
+    #   - PGID=${PGID}
     volumes:
       - /volumes/monitoring/prometheus-data/config:/etc/prometheus
       - /volumes/monitoring/prometheus-data:/prometheus
@@ -27,7 +27,10 @@ services:
     container_name: grafana
     ports:
       - "3000:3000"
-    user: "${PUID}:${PGID}"
+    # user: "${PUID}:${PGID}"
+    # environment:
+    #   - PUID=${PUID}
+    #   - PGID=${PGID}
     volumes:
       - /volumes/monitoring/grafana-data:/var/lib/grafana
     restart: unless-stopped
