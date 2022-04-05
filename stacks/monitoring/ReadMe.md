@@ -2,7 +2,8 @@
 ### Creation of following volume directories on the host file system will be needed
 ```
     mkdir -p /volumes/monitoring/prometheus-data/config
-    mkdir -p /volumes/monitoring/grafana-data        
+    mkdir -p /volumes/monitoring/grafana-data  
+    mkdir -p /volumes/monitoring/redis-data      
     cd /volumes/monitoring/prometheus-data/config
     wget https://raw.githubusercontent.com/doc4child/templates/master/stacks/monitoring/prometheus.yml
     chown -R 65534:65534 /volumes/monitoring/prometheus-data
