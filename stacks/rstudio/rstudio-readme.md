@@ -6,13 +6,13 @@ docker run -d -p 8787:8787 --restart=always -v /volume/rstudio:/home/rstudio -v 
 
 
 First look for id_rsa and id_rsa.pub files in the ubuntu server.
-superuser@ubuntu:~$ cd ~/.ssh
+superuser@ubuntu:\~$ cd \~/.ssh
 superuser@ubuntu:~/.ssh$ ls
 authorized_keys  id_rsa  id_rsa.pub  known_hosts
 
 Now copy those files to the hosted directory in rstudio
-superuser@ubuntu:~/.ssh $ cp ~/.ssh/id_rsa.pub /volumes/rstudio/home
-superuser@ubuntu:~/.ssh $ cp ~/.ssh/id_rsa /volumes/rstudio/home
+superuser@ubuntu:\~/.ssh $ cp \~/.ssh/id_rsa.pub /volumes/rstudio/home
+superuser@ubuntu:\~/.ssh $ cp \~/.ssh/id_rsa /volumes/rstudio/home
 
 Now become root in rstudio container. the same files are hosted under /home/rstudio inside that container since that folder is mapped on host directory /volueme/rstudio/home
 superuser@ubuntu:~/.ssh$ docker exec -it rstudio /bin/bash
