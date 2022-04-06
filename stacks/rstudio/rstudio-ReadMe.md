@@ -1,7 +1,7 @@
 
 
 This works:
-docker run -d -p 8787:8787 --restart=always -v /volume/rstudio:/home/rstudio -v /volumes/rstudio/projects:/home/rstudio/projects -e USER=user -e PASSWORD=wd2ct4et  --name rstudio rocker/rstudio
+docker run -d -p 8787:8787 --restart=always -v /volume/rstudio:/home/rstudio -v /volumes/rstudio/projects:/home/rstudio/projects -e USER=user -e PASSWORD=Pa55w0rd  --name rstudio rocker/rstudio
 
 
 
