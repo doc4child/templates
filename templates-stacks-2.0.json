@@ -166,6 +166,34 @@
 		},
 		{
 			"type": 3,
+			"title": "rstudio",
+			"name": "rstudio",
+			"description": "rstudio stack",
+			"note": "Create directories and set config file - instructions at <p><h1><a href='https://github.com/doc4child/templates/blob/master/stacks/rstudio/rstudio-ReadMe.md' target='_blank'>ReadMe</a></h1></p>",
+			"categories": [
+				"Development"
+			],
+			"platform": "linux",
+			"logo": "https://cdn.icon-icons.com/icons2/1508/PNG/512/rstudio_104598.png",
+			"repository": {
+				"url": "https://github.com/doc4child/templates",
+				"stackfile": "stacks/rstudio/rstudio-stack.yml"
+			},
+			"env": [
+				{
+					"name": "USER",
+					"default": "user",
+					"label": "User"
+				},
+				{
+					"name": "PASSWORD",
+					"default": "Pa55w0rd",
+					"label": "Password"
+				}
+			]
+		},
+		{
+			"type": 3,
 			"title": "Watchtower",
 			"name": "Watchtower",
 			"description": "Watchtower",

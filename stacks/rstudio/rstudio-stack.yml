@@ -15,8 +15,8 @@ services:
     networks:
       - docker-network
     environment:
+      - USER=${USER}
       - PASSWORD=${PASSWORD}
-      - USER=doc4child
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
     ports:

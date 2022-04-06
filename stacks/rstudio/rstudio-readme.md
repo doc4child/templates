@@ -1,4 +1,4 @@
-https://github.com/TelethonKids/rstudio/blob/master/docker-compose.yml
+
 
 This works:
 docker run -d -p 8787:8787 --restart=always -v /volume/rstudio:/home/rstudio -v /volumes/rstudio/projects:/home/rstudio/projects -e USER=doc4child -e PASSWORD=wd2ct4et  --name rstudio rocker/rstudio
@@ -25,3 +25,6 @@ id_rsa  id_rsa.pub  projects
 copy them to rstudio user's ssh directory.
 root@7aa78c9e1e6d:/home/rstudio# cp /home/rstudio/id_rsa /home/doc4child/.ssh/id_rsa
 root@7aa78c9e1e6d:/home/rstudio# cp /home/rstudio/id_rsa.pub /home/doc4child/.ssh/id_rsa.pub
+
+Ref:
+https://github.com/TelethonKids/rstudio/blob/master/docker-compose.yml
