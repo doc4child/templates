@@ -49,3 +49,7 @@ ref used was https://github.com/osixia/docker-openldap/issues/120
 and https://github.com/Ramhm/openldap/blob/master/docker-compose.yml 
 
 replace ${DOMAIN} ${CHANGEME} ${npm_XX} docker-network
+
+# for configuration of authelia for ldap
+
+https://www.authelia.com/docs/configuration/authentication/ldap.html
