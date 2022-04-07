@@ -125,6 +125,30 @@
 			]
 		},
 		{
+			"version": "2",
+			"templates": [
+				{
+					"title": "TSS",
+					"name": "torrent-stream-server",
+					"image": "ghcr.io/kiralt/torrent-stream-server:latest",
+					"description": "Stream Torrents",
+					"categories": [
+						"torrents",
+						"streaming",
+						"downloads"
+					],
+					"platform": "linux",
+					"restart_policy": "unless-stopped",
+					"ports": [
+						"3333:3000/tcp"
+					],
+					"logo": "https://avatars.githubusercontent.com/u/10944908?v=4",
+					"network_mode": "bridge",
+					"type": 1
+				}
+			]
+		},
+		{
 			"type": 1,
 			"title": "Adguardhome-sync",
 			"name": "Adguardhome-sync",
