@@ -30,6 +30,8 @@ totp:
   period: 30
   skew: 1
 
+## choose between file based user database or ldap server.
+
 # authentication_backend:
 #   disable_reset_password: false
 #   refresh_interval: 5m
@@ -43,7 +45,7 @@ totp:
 #       memory: 1024
 #       parallelism: 8
 
-
+## In this example ldap server supplies the users
 authentication_backend:
   ldap:
     implementation: custom
